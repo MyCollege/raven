@@ -63,7 +63,7 @@ Asynchronous
         def get(self):
             try:
                 raise ValueError()
-            except Exception, e:
+            except Exception as e:
                 response = yield tornado.gen.Task(
                     self.captureException, exc_info=True
                 )
