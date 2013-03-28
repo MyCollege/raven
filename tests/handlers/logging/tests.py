@@ -1,10 +1,7 @@
 import six
 import logging
 import sys
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 from raven.base import Client
 from raven.handlers.logging import SentryHandler
 from raven.utils.stacks import iter_stack_frames

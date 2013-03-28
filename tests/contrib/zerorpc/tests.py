@@ -3,10 +3,7 @@ import pytest
 import random
 import shutil
 import tempfile
-try:
-    from unittest2 import TestCase
-except:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 
 from raven.base import Client
 from raven.contrib.zerorpc import SentryMiddleware

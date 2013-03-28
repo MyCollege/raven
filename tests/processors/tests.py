@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from mock import Mock
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 from raven.processors import SanitizePasswordsProcessor, RemovePostDataProcessor, \
   RemoveStackLocalsProcessor
 

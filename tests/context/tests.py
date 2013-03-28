@@ -1,10 +1,7 @@
 import mock
 import sys
 from exam import fixture
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 
 from raven.context import Context
 

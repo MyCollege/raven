@@ -3,10 +3,7 @@ from __future__ import with_statement
 import logging
 import webob
 from exam import fixture
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 
 from raven.base import Client
 from raven.middleware import Sentry

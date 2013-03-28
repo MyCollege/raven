@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-try:
-    from unittest2 import TestCase
-except ImportError:
-    from unittest import TestCase
+from raven.utils.compat import TestCase
 
 import raven
 from raven.utils import get_versions
