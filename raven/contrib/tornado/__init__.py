@@ -12,7 +12,7 @@ import time
 import raven
 from raven.base import Client
 from raven.utils import get_auth_header
-from tornado.httpclient import AsyncHTTPClient, HTTPError
+from tornado.httpclient import AsyncHTTPClient, HTTPError, HTTPRequest
 
 
 class AsyncSentryClient(Client):
@@ -112,9 +112,9 @@ class AsyncSentryClient(Client):
         if headers is None:
             headers = {}
 
-        return AsyncHTTPClient().fetch(
-            url, callback, method="POST", body=data, headers=headers
-        )
+        request = HTTPRequest(url, method="POST", body=data, headers=headers,
+                              validate_cert=False)
+        return AsyncHTTPClient().fetch(request, callback)
 
 
 class SentryMixin(object):
