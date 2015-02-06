@@ -1,6 +1,7 @@
 from django.conf import settings
 import os.path
 
+
 INSTALLED_APPS=[
     'django.contrib.auth',
     'django.contrib.admin',
